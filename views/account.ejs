@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Account</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500&family=Open+Sans:wght@300;400&family=Quicksand:wght@300&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://kit-pro.fontawesome.com/releases/v6.0.0/css/pro.min.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        background: rgb(27,40,56);
+        margin: 0;
+    }
+
+    header {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: rgb(23,26,33);
+    }
+
+    .headerLogo {
+        height: 40px;
+        width: auto;
+    }
+
+    .headerText {
+        float: right;
+        margin-right: 20px;
+    }
+
+    header a {
+        color: rgb(184,177,172);
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        font-weight: 300;
+        font-size: 15px;
+        text-decoration: none;
+    }
+
+    header b {
+        color: rgb(184,177,172);
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        font-weight: 300;
+        font-size: 15px;
+        text-decoration: none;
+    }
+
+    header a:hover {
+        text-decoration: underline;
+    }
+
+    .title {
+        color: white;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        font-weight: 300;
+        font-size: 60px;
+        letter-spacing: 2px;
+        word-spacing: 5px;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .information {
+        color: white;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        font-weight: 300;
+        font-size: 10px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .information {
+        color: white;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        font-weight: 300;
+        font-size: 10px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .sectionContainer {
+        margin-bottom: 20px;
+    }
+
+    .sectionTitle {
+        color: white;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        font-weight: 300;
+        font-size: 20px;
+        margin-left: 10px;
+    }
+
+    .link {
+        color: rgb(95,186,238);
+        text-decoration: none;
+    }
+
+    .link:hover {
+        color: white;
+    }
+
+    .selectedButton {
+        background-color: rgb(55,67,80);
+        color: white;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        border: 0 solid;
+        border-radius: 2px;
+        width: 200px;
+        height: 50px;
+        margin-bottom: 25px;
+    }
+
+    .sideButton {
+        background: none;
+        color: white;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        border: 0 solid;
+        border-radius: 2px;
+        width: 200px;
+        height: 50px;
+        margin-bottom: 25px;
+    }
+
+    .sideButton:hover {
+        background-color: rgb(96,106,116);
+    }
+
+    .selectedButton:hover {
+        background-color: rgb(96,106,116);
+    }
+</style>
+<body>
+    <header>
+        <a href="/">
+            <img class="headerLogo" src="/assets/header_logo.png">
+        </a> 
+        
+        <span class="headerText">
+            <% if(applicationAdministrators.indexOf(userData.email) > -1) { %>
+                <a href="/dev/panel">Administrator Panel</a>
+                <b>|</b>
+                <a href="/dashboard">Dashboard</a>
+           <% } else { %>
+                <a href="/dashboard">Dashboard</a>
+           <% } %>
+        </span>
+    </header>
+
+    <div class="container-fluid" style="margin-top: 60px; max-width: 940px;">
+        <div class="row">
+            <div class="col-md-4">
+                <h2 style="color: rgb(143,137,133); font-size: 10px;">Dashboard > Account Management</h2>
+                <h1 style="color: white; font-size: 30px;">Account Management</h1>
+                <h2 style="color: rgb(143,137,133); font-size: 10px;">Steam Token: <%= userData.token %></h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid" style="margin-top: 20px; max-width: 936px;">
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <button class="selectedButton" href="/dashboard/account">Account Management</button>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div>
+                    <div style="background-color: rgb(1,151,207); height: 25px;">
+                        <h1 class="sectionTitle"><i class="fa-solid fa-envelope"></i> CONTACT INFORMATION</h1>
+                    </div>
+    
+                <div class="container sectionContainer" style="background-color: rgb(22,32,45); height: 200px;">
+                    <a class="link" href="#">Manage Email</a>
+                    <div style="display: flex; margin-top: 10px;">
+                        <p style="color: rgb(101,123,103);">Email Address:</p>
+                        <p style="color: white; margin-left: 10px;"> <%= userData.email %></p>
+                    </div>
+                    <div style="display: flex;">
+                        <p style="color: rgb(101,123,103);">Verified:</p>
+                        <p style="color: white; margin-left: 10px;">False</p>
+                    </div>
+                </div>
+
+                <div class="sectionContainer">
+                    <div class="container" style="background-color: rgb(22,32,45); height: 25px;">
+                        <a class="link" href="/logout">Logout</a>
+                    </div>
+                </div>
+
+                <div class="sectionContainer">
+                    <div class="container" style="background-color: rgb(22,32,45); height: 25px;">
+                        <a class="link" href="/dashboard/acccount/deleteaccount">Delete my Steam Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-sm-4">
+                <p class="information">© 2022 Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries. VAT included in all prices where applicable.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

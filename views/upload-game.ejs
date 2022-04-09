@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Game</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500&family=Open+Sans:wght@300;400&family=Quicksand:wght@300&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="/assets/favicon.ico">
+</head>
+<style>
+    body {
+        background-color: rgb(33,36,41);
+        margin: 0;
+    }
+
+    header {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: rgb(23,26,33);
+    }
+
+    .headerLogo {
+        height: 40px;
+        width: auto;
+    }
+
+    .headerText {
+        float: right;
+        margin-right: 20px;
+    }
+
+    header a {
+        color: rgb(184,177,172);
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        font-weight: 300;
+        font-size: 15px;
+        text-decoration: none;
+    }
+
+    header a:hover {
+        text-decoration: underline;
+    }
+
+    .title {
+        color: white;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        font-weight: 300;
+        font-size: 38px;
+        letter-spacing: 2px;
+        word-spacing: 10px;
+        text-align: center;
+    }
+
+    .formContainer {
+        text-align: center;
+    }
+
+    .formLabel1 {
+        margin-right: 350px;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        color: rgb(184,177,172);
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+    .formLabel2 {
+        margin-right: 315px;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        color: rgb(184,177,172);
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+    .formLabel3 {
+        margin-right: 335px;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        color: rgb(184,177,172);
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+    .formLabel4 {
+        margin-right: 375px;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        color: rgb(184,177,172);
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+    .formLabel5 {
+        margin-right: 260px;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        color: rgb(184,177,172);
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+    .formLabel6 {
+        margin-right: 160px;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        color: rgb(184,177,172);
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+    .formInput {
+        width: 430px;
+        height: 30px;
+        border: 0 solid;
+        border-radius: 2px;
+        background-color: rgb(50,53,60);
+        color: white;
+    }
+
+    .submitButton {
+        background: rgb(61,163,241);
+        background: linear-gradient(90deg, rgba(61,163,241,1) 0%, rgba(37,97,208,1) 100%);
+        color: white;
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        border: 0 solid;
+        border-radius: 2px;
+        width: 150px;
+        height: 30px;
+    }
+</style>
+<body>
+    <header>
+        <a href="/">
+            <img class="headerLogo" src="/assets/header_logo.png">
+        </a> 
+        
+        <span class="headerText"><a href="/dashboard">Dashboard</a></span>
+    </header>
+
+    <h1 class="title">UPLOAD GAME</h1>
+
+    <div class="formContainer">
+        <form action="/dev/games/upload" method="POST" autocomplete="off">
+            <label class="formLabel1">*Game Name</label> <br>
+            <input class="formInput" id="name" name="name" type="name">
+
+            <br><br>
+
+            <label class="formLabel2">*Game Description</label> <br>
+            <input class="formInput" id="description" name="description" type="text">
+
+            <br><br>
+
+            <label class="formLabel3">*Game Release</label> <br>
+            <input class="formInput" id="release" name="release" type="text">
+
+            <br><br>
+
+            <label class="formLabel4">*Game ID</label> <br>
+            <input class="formInput" id="id" name="id" type="text">
+
+            <br><br>
+
+            <label class="formLabel5">*Game Image (header.jpg)</label> <br>
+            <input class="formInput" id="image" name="image" type="text">
+
+            <br><br>
+
+            <label class="formLabel6">Game Thumbnail (capsule_616x353.jpg)</label> <br>
+            <input class="formInput" id="thumbnail" name="thumbnail" type="text">
+
+            <br><br>
+
+            <input class="submitButton" type="submit" value="Upload">
+        </form>
+    </div>
+</body>
+</html>
